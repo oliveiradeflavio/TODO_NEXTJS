@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TODO_NEXTJS 📋
 
-## Getting Started
+Aplicação web para gerenciamento de tarefas (ToDo list) construída com Next.js, React, Prisma e Tailwind CSS.
 
-First, run the development server:
+## Tecnologias utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js** 15.3.5 — framework React com SSR e recursos avançados
+- **React** 19 — biblioteca de UI
+- **Prisma** 6.11.1 — ORM para acesso ao banco de dados
+- **Tailwind CSS** 4 — framework utilitário para estilização rápida
+- **ESLint** — linting e qualidade de código
+
+## Funcionalidades
+
+- Criar, editar e listar tarefas
+- Persistência via banco de dados acessado com Prisma
+- Interface responsiva com Tailwind CSS
+- Desenvolvimento local com hot-reload via `next dev`
+
+## Pré-requisitos
+
+- Node.js (recomendo versão 18+)
+- Banco de dados configurado para Prisma (exemplo: SQLite, PostgreSQL, MySQL)
+
+## Como rodar o projeto localmente
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/oliveiradeflavio/TODO_NEXTJS.git
+   cd TODO_NEXTJS
+   ```
+
+2. Instale as dependências:
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
+
+3. Configure seu banco de dados para o Prisma:
+   - Crie um arquivo `.env` na raiz com a variável de ambiente `DATABASE_URL`, apontando para seu banco, por exemplo:
+     ```
+     DATABASE_URL="file:./dev.db"
+     ```
+     (Para SQLite local, ou o connection string do seu banco)
+
+4. Rode as migrações do Prisma para criar as tabelas:
+   ```bash
+   npx prisma migrate dev --name init
+   ```
+
+5. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   # ou
+   yarn dev
+   ```
+
+6. Acesse a aplicação em [http://localhost:3000](http://localhost:3000)
+
+## Scripts úteis
+
+- `dev` — roda Next.js no modo desenvolvimento com Turbopack
+- `build` — gera build para produção
+- `start` — inicia servidor Next.js em produção
+- `lint` — verifica qualidade e erros no código
+
+## Estrutura do projeto
+
+```
+/
+├─ prisma/           # arquivos de schema e migração do Prisma
+├─ pages/            # páginas Next.js (rotas)
+├─ components/       # componentes React reutilizáveis
+├─ styles/           # estilos globais e Tailwind CSS
+├─ public/           # arquivos estáticos (imagens, fontes)
+├─ .env              # variáveis de ambiente (não versionar)
+├─ package.json
+└─ ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Melhorias futuras (ideias)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Implementar autenticação de usuário
+- Adicionar filtro e ordenação das tarefas
+- Notificações e lembretes
+- Implantar testes automatizados
+- Deploy automático (Vercel, Netlify, etc)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Licença
 
-## Learn More
+Este projeto está sob a licença MIT.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Desenvolvido por [oliveiradeflavio](https://github.com/oliveiradeflavio)  
